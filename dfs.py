@@ -34,3 +34,13 @@ if __name__ == "__main__":
 
     print("Depth First Traversal (starting from vertex", start_vertex, "):")
     g.DFS(start_vertex)
+
+
+
+# 0 1
+# 0 2
+# 1 2
+# 2 0
+# 2 3
+# 3 3
+# done
