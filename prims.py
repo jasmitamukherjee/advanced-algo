@@ -1,5 +1,4 @@
-import sys
-
+#prims
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
@@ -11,7 +10,7 @@ class Graph:
             print(parent[i], "-", i, "\t", self.graph[i][parent[i]])
 
     def minKey(self, key, mstSet):
-        min_val = sys.maxsize
+        min_val = float('inf')
         min_index = -1
         for v in range(self.V):
             if key[v] < min_val and not mstSet[v]:
@@ -20,11 +19,11 @@ class Graph:
         return min_index
 
     def primMST(self):
-        key = [sys.maxsize] * self.V
+        key = [float('inf')] * self.V
         parent = [None] * self.V
         key[0] = 0
         mstSet = [False] * self.V
-        parent[0] = -1 
+        parent[0] = -1
 
         for _ in range(self.V):
             u = self.minKey(key, mstSet)
@@ -47,7 +46,6 @@ if __name__ == '__main__':
 
     print("Minimum Spanning Tree using Prim's algorithm:")
     g.primMST()
-
 
 # 5
 # 0 2 0 6 0
